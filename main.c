@@ -31,9 +31,11 @@ int find(int pos, char s[], char to_find[]) {
 		if (s[pos+j] == to_find[j]) res++;
 		else res *= 0;
 	}
-	/* if (res == length(to_find) && s[pos+length(to_find)] == ' ' && s[pos-1] == ' ') return 1; */
-	/* if (res == length(to_find) && s[pos+length(to_find)] == ' ') return 1; */
-	if (res == length(to_find)) return 1;
+	/* if (pos == 1) { */
+	/* 	if (res == length(to_find) && s[pos+length(to_find)] == ' ' && s[pos-1] == ' ') return 1; */
+	/* } else { */
+		if (res == length(to_find) && (s[pos+length(to_find)] == '(' || s[pos+length(to_find)] == '{' || s[pos+length(to_find)] == ' ')) return 1;
+	/* } */
 	return 0;
 }
 
